@@ -1,0 +1,5 @@
+<p><input type="text" #username ></p>
+<h1>{{usernames.name}}</h1>
+
+<button type="button" (click)="clickme(username.value)">Clickme</button>
+<p *ngFor="let user of userNamesArray"><app-profile>{{user.name}}</app-profile></p> 

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     HeaderComponent,
     HomeComponent,
     ProfileComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ToDoListComponent
   ],
   imports: [
     BrowserModule,
