@@ -25,6 +25,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/market">Market</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ToDoList">ToDoList</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input
@@ -33,7 +36,11 @@
         placeholder="Search"
         aria-label="Search"
       />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+      <button
+        type="button"
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="clickme(Search.value)"
+      >
         Search
       </button>
     </form>
