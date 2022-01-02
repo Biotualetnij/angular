@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   constructor() {}
+  usernames: any;
 
-  ngOnInit(): void {}
+  clickme = function (username: string) {};
+  ngOnInit(): void {
+    this.clickme = function (username: string) {
+      this.usernames = username;
+      console.log('it does nothing', username);
+    };
+  }
 }
