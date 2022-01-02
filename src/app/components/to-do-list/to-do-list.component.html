@@ -1,6 +1,29 @@
-<p>to-do-list works!</p>
-<p><input type="text" id="username" name="username" #username /></p>
-<h1>{{ usernames }}</h1>
+<p><input type="text" #username /></p>
 
-<button type="button" (click)="clickme(username.value)">Add ToToDoList</button>
-<p></p>
+<button
+  type="button"
+  class="btn"
+  (click)="addValueToToDoArray(username.value); username.value = ''"
+>
+  Clickme
+</button>
+<div
+  class="toDo-card-container"
+  *ngFor="let doing of toDoListArray; let i = index"
+>
+  <div class="toDo-card-name" *ngIf="i != isInput">{{ doing.name }}</div>
+  <div class="toDo-card-button-container">
+    <button
+      class="toDo-card-cancel-btn btn"
+      (click)="deleteValueInTaskArray(i)"
+    >
+      cancel
+    </button>
+    <input type="text" #changeData *ngIf="i == isInput" /><button
+      class="toDo-card-change-btn btn"
+      (click)="showInput(i)"
+    >
+      change
+    </button>
+  </div>
+</div>
