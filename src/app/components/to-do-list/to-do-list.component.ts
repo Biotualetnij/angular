@@ -13,26 +13,42 @@ export class ToDoListComponent implements OnInit {
   inputValue: any;
   usernames: any;
   toDoListArray: any;
-
+  isInput: number;
   constructor() {
+    this.isInput = -1;
     this.usernames = 's';
-    this.toDoListArray = ['hello', 'goodbye'];
+    this.toDoListArray = [{ name: '' }];
   }
 
   clickme = function (username: string) {};
   getArrayFromLocalStorage = function () {};
-
+  addValueToToDoArray = function (item: string) {};
+  showInput = function (index: number) {};
+  deleteValueInTaskArray = function (index: number) {};
   ngOnInit(): void {
     this.inputValue = 'hello friend';
 
     this.getArrayFromLocalStorage = function () {
       this.usernames = localStorage.getItem('taskArray');
-      this.toDoListArray = JSON.parse(this.usernames);
+      if (this.usernames) {
+        this.toDoListArray = JSON.parse(this.usernames);
+      }
     };
-    this.getArrayFromLocalStorage();
+    this.addValueToToDoArray = function (item) {
+      this.toDoListArray.push({ name: item });
+      localStorage.setItem('taskArray', JSON.stringify(this.toDoListArray));
+    };
+    this.showInput = function (index) {
+      this.isInput = index;
+    };
+    this.deleteValueInTaskArray = function (index) {
+      this.toDoListArray.splice(index, 1);
+      localStorage.setItem('taskArray', JSON.stringify(this.toDoListArray));
+    };
     this.clickme = function (username: string) {
       this.usernames = username;
       console.log('it does nothing', username);
     };
+    this.getArrayFromLocalStorage();
   }
 }

@@ -1,22 +1,31 @@
-<p><input type="text" #username /></p>
+<p><input type="text" #addToDoItem /></p>
 
-<button type="button" class="btn">Clickme</button>
+<button
+  type="button"
+  class="btn"
+  (click)="addValueToToDoArray(addToDoItem.value); addToDoItem.value = ''"
+>
+  Clickme
+</button>
 <div
   class="toDo-card-container"
   *ngFor="let element of toDoListArray; let i = index"
 >
-  <div class="toDo-card-name">{{ element }}</div>
+  <div class="toDo-card-name" *ngIf="i != isInput">{{ element.name }}</div>
   <div class="toDo-card-button-container">
-    <button class="toDo-card-cancel-btn btn">cancel</button>
-    <input type="text" #changeData /><button class="toDo-card-change-btn btn">
+    <button
+      class="toDo-card-cancel-btn btn"
+      (click)="deleteValueInTaskArray(i)"
+    >
+      cancel
+    </button>
+    <input type="text" #changeData *ngIf="i == isInput" /><button
+      class="toDo-card-change-btn btn"
+      (click)="showInput(i)"
+    >
       change
     </button>
   </div>
 </div>
-<!-- (click)="showInput(i)" -->
-<!-- *ngIf="i == isInput" -->
-<!-- (click)="deleteValueInTaskArray(i)" -->
-<!-- *ngIf="i != isInput" -->
+
 <!--  -->
-<!-- (click)="addValueToToDoArray(username.value); username.value = ''" -->
-<!-- {{ doing.name }} -->
