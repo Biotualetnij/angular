@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
+import { LoginComponent } from './components/login-signup-system/login/login.component';
+import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
     HomeComponent,
     ProfileComponent,
     ErrorPageComponent,
-    ToDoListComponent
+    ToDoListComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

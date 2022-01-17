@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { LocalStorageServiceService } from 'src/app/services/local-storage-service.service';
 
@@ -47,7 +44,7 @@ export class ToDoListComponent implements OnInit {
 
     this.changeValueInTaskArray = function (index: number, value: string) {
       this.toDoListArray[index].name = value;
-
+      this.isInput = -1;
       this.localStorageService.setObjectToLocalStorage(
         'taskArray',
         this.toDoListArray

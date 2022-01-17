@@ -17,11 +17,17 @@
       class="toDo-card-cancel-btn btn"
       (click)="deleteValueInTaskArray(i)"
     >
-      cancel
+      delete
     </button>
-    <input type="text" #changeData *ngIf="i == isInput" /><button
+    <div *ngIf="i == isInput" style="display: flex">
+      <input type="text" #charge />
+      <button type="button" (click)="changeValueInTaskArray(i, charge.value)">
+        submit
+      </button>
+    </div>
+    <button
       class="toDo-card-change-btn btn"
-      (click)="showInput(i)"
+      (click)="i != isInput ? showInput(i) : (isInput = -1)"
     >
       change
     </button>
