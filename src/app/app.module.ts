@@ -10,7 +10,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { LoginComponent } from './components/login-signup-system/login/login.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,10 @@ import { SignupComponent } from './components/login-signup-system/signup/signup.
     ErrorPageComponent,
     ToDoListComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
