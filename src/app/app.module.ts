@@ -8,8 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
-import { SignupComponent } from './components/login-signup/system/signup/signup.component';
-import { LoginComponent } from './components/login-signup/system/login/login.component';
+import { LoginComponent } from './components/login-signup-system/login/login.component';
+import { SignupComponent } from './components/login-signup-system/signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,10 @@ import { LoginComponent } from './components/login-signup/system/login/login.com
     ProfileComponent,
     ErrorPageComponent,
     ToDoListComponent,
-    SignupComponent,
     LoginComponent,
+    SignupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { LocalStorageServiceService } from 'src/app/services/local-storage-service.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -11,44 +10,51 @@ import { FormsModule } from '@angular/forms';
 export class ToDoListComponent implements OnInit {
   self = this;
   inputValue: any;
-  usernames: any;
   toDoListArray: any;
-  isInput: number;
-  constructor() {
-    this.isInput = -1;
-    this.usernames = 's';
-    this.toDoListArray = [{ name: '' }];
+  isInput: any;
+  constructor(private localStorageService: LocalStorageServiceService) {
+    this.toDoListArray = localStorageService.getLocalStorageData('taskArray');
   }
 
-  clickme = function (username: string) {};
-  getArrayFromLocalStorage = function () {};
-  addValueToToDoArray = function (item: string) {};
-  showInput = function (index: number) {};
+  addValueToToDoArray = function (taskName: string) {};
   deleteValueInTaskArray = function (index: number) {};
+  changeValueInTaskArray = function (index: number, value: string) {};
+  showInput = function (index: number) {};
+
   ngOnInit(): void {
     this.inputValue = 'hello friend';
 
-    this.getArrayFromLocalStorage = function () {
-      this.usernames = localStorage.getItem('taskArray');
-      if (this.usernames) {
-        this.toDoListArray = JSON.parse(this.usernames);
-      }
+    this.addValueToToDoArray = function (taskName: string) {
+      this.toDoListArray.push({ name: taskName });
+
+      this.localStorageService.setObjectToLocalStorage(
+        'taskArray',
+        this.toDoListArray
+      );
     };
-    this.addValueToToDoArray = function (item) {
-      this.toDoListArray.push({ name: item });
-      localStorage.setItem('taskArray', JSON.stringify(this.toDoListArray));
+
+    this.deleteValueInTaskArray = function (index: number) {
+      this.toDoListArray.splice(index, 1);
+
+      this.localStorageService.setObjectToLocalStorage(
+        'taskArray',
+        this.toDoListArray
+      );
     };
-    this.showInput = function (index) {
+
+    this.changeValueInTaskArray = function (index: number, value: string) {
+      this.toDoListArray[index].name = value;
+      this.isInput = -1;
+      this.localStorageService.setObjectToLocalStorage(
+        'taskArray',
+        this.toDoListArray
+      );
+    };
+
+    this.showInput = function (index: number) {
       this.isInput = index;
     };
-    this.deleteValueInTaskArray = function (index) {
-      this.toDoListArray.splice(index, 1);
-      localStorage.setItem('taskArray', JSON.stringify(this.toDoListArray));
-    };
-    this.clickme = function (username: string) {
-      this.usernames = username;
-      console.log('it does nothing', username);
-    };
-    this.getArrayFromLocalStorage();
   }
 }
+//localStorage.getItem('key');
+//localStorage.setItem('key','value');
