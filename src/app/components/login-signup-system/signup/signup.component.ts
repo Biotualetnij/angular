@@ -14,7 +14,25 @@ export class SignupComponent implements OnInit {
 
   signUp = (username: string, password: string) => {};
   ngOnInit(): void {
-    this.signUp = (username: string, password: string) => {};
+    this.signUp = (username: string, password: string) => {
+      this.http
+        .post<any>('http://localhost:3000/sign-up/registerUser', {
+          login: username,
+          password: password,
+        })
+        .subscribe(
+          (response) => {
+            if (response) {
+              console.log('you are registered');
+            } else {
+              console.log('you cannot be registered ');
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    };
   }
 }
 // {
