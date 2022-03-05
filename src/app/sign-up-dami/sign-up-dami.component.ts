@@ -15,6 +15,24 @@ export class SignUpDamiComponent implements OnInit {
 
   signUpdami = (username: string, password: string) => {};
   ngOnInit(): void {
-    this.signUpdami = (username: string, password: string) => {};
+    this.signUpdami = function (username: string, password: string) {
+      this.http
+        .post<any>('http://localhost:3000/log-in/checkUser', {
+          login: username,
+          password: password,
+        })
+        .subscribe(
+          (response) => {
+            if (response) {
+              console.log('you are signed  up');
+            } else {
+              console.log('you are not signed up');
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    };
   }
 }
