@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login-signup-system/login/login.com
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginArgComponent } from './login-arg/login-arg.component';
+import { SignupArgComponent } from './signup-arg/signup-arg.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoginArgComponent } from './login-arg/login-arg.component';
     LoginComponent,
     SignupComponent,
     LoginArgComponent,
+    SignupArgComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
