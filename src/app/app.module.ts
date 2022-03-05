@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login-signup-system/login/login.com
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginDamiComponent } from './login-dami/login-dami.component';
+import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoginDamiComponent } from './login-dami/login-dami.component';
     LoginComponent,
     SignupComponent,
     LoginDamiComponent,
+    SignUpDamiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
