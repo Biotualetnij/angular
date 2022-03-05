@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login-signup-system/login/login.component';
+import { LoginDamiComponent } from './login-dami/login-dami.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'toDoList', component: ToDoListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'logindami', component: LoginDamiComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

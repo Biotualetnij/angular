@@ -11,6 +11,7 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 import { LoginComponent } from './components/login-signup-system/login/login.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginDamiComponent } from './login-dami/login-dami.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     ToDoListComponent,
     LoginComponent,
     SignupComponent,
+    LoginDamiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
