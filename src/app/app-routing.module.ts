@@ -7,6 +7,7 @@ import { LoginDamiComponent } from './login-dami/login-dami.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
+import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'toDoList', component: ToDoListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'sign-up-dami', component: SignUpDamiComponent },
   { path: 'logindami', component: LoginDamiComponent },
   { path: '**', component: ErrorPageComponent },
 ];
