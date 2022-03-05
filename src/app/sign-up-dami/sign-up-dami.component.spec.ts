@@ -8,9 +8,8 @@ describe('SignUpDamiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignUpDamiComponent ]
-    })
-    .compileComponents();
+      declarations: [SignUpDamiComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
