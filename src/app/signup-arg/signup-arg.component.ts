@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  templateUrl: './signup-arg.component.html',
+  styleUrls: ['./signup-arg.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignupArgComponent implements OnInit {
   public user$: { userArr: { name: string; password: string }[] } = {
     userArr: [{ name: '', password: '' }],
   };
