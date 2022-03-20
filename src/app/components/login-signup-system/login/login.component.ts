@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
     userArr: [{ name: '', password: '' }],
   };
   public user: any;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   logIn = function (username: string, password: string) {};
 
@@ -24,7 +25,12 @@ export class LoginComponent implements OnInit {
         })
         .subscribe(
           (response) => {
+            console.log(response);
+
             if (response) {
+              var today = new Date();
+              today.setMinutes(today.getMinutes() + 1);
+              this.cookieService.set('login', 'true', today);
               console.log('you are logged in');
             } else {
               console.log('you are not logged in');
