@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { Subscription } from 'rxjs';
+import { DataService } from '../dataService';
 
 @Component({
   selector: 'app-header',
@@ -7,21 +8,19 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  public isLoginIn = false;
-  constructor(private cookieService: CookieService) {}
-  getCookie() {
-    let auth = this.cookieService.get('login');
-    if (auth === 'true') {
-      this.isLoginIn = true;
-    } else {
-      this.isLoginIn = false;
-    }
-    setTimeout(() => {
-      this.getCookie();
-    }, 5000);
+  public isLoginIn: any;
+  public subscription: Subscription;
+
+  constructor(private ds: DataService) {
+    // subscribe to home component messages
+    this.subscription = this.ds.getData().subscribe((x) => {
+      this.isLoginIn = x;
+    });
   }
 
-  ngOnInit(): void {
-    this.getCookie();
+  ngOnInit(): void {}
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    // unsubscribe to ensure no memory leaks
   }
 }

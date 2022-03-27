@@ -11,6 +11,7 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 import { LoginComponent } from './components/login-signup-system/login/login.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './dataService';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
