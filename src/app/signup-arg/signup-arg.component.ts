@@ -16,7 +16,7 @@ export class SignupArgComponent implements OnInit {
   ngOnInit(): void {
     this.signUp = (username: string, password: string) => {
       this.http
-        .post<any>('http://localhost:3000/signup-arg/registerUser', {
+        .post<any>('http://localhost:3000/arg-signup/registerUser', {
           login: username,
           password: password,
         })

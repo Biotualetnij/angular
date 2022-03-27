@@ -7,6 +7,7 @@ import { SignupComponent } from './components/login-signup-system/signup/signup.
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { LoginArgComponent } from './login-arg/login-arg.component';
+import { SignupArgComponent } from './signup-arg/signup-arg.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login-arg', component: LoginArgComponent },
+  { path: 'signup-arg', component: SignupArgComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 
