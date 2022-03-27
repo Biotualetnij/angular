@@ -17,7 +17,7 @@ export class SignUpDamiComponent implements OnInit {
   ngOnInit(): void {
     this.signUpdami = function (username: string, password: string) {
       this.http
-        .post<any>('http://localhost:3000/log-in/checkUser', {
+        .post<any>('http://localhost:3000/sign-up-dami/registerUser', {
           login: username,
           password: password,
         })
