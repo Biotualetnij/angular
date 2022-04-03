@@ -13,6 +13,7 @@ import { SignupComponent } from './components/login-signup-system/signup/signup.
 import { HttpClientModule } from '@angular/common/http';
 import { LoginDamiComponent } from './login-dami/login-dami.component';
 import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
+import { DataService } from './dataService';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
     SignUpDamiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
