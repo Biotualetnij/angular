@@ -10,7 +10,7 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'Home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'toDoList', component: ToDoListComponent },
   { path: 'login', component: LoginComponent },
