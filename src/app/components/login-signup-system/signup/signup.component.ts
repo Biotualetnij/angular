@@ -9,8 +9,10 @@ import { DataService } from 'src/app/dataService';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  public user$: { userArr: { name: string; password: string }[] } = {
-    userArr: [{ name: '', password: '' }],
+  public user$: {
+    userArr: { name: string; password: string; aime: string; mail: string }[];
+  } = {
+    userArr: [{ name: '', password: '', aime: '', mail: '' }],
   };
   constructor(
     private http: HttpClient,
@@ -18,13 +20,25 @@ export class SignupComponent implements OnInit {
     private router: Router
   ) {}
 
-  signUp = (username: string, password: string) => {};
+  signUp = (
+    username: string,
+    password: string,
+    email: string,
+    name: string
+  ) => {};
   ngOnInit(): void {
-    this.signUp = (username: string, password: string) => {
+    this.signUp = (
+      username: string,
+      password: string,
+      email: string,
+      name: string
+    ) => {
       this.http
         .post<any>('http://localhost:3000/sign-up/registerUser', {
           login: username,
           password: password,
+          email: email,
+          name: name,
         })
         .subscribe(
           (response) => {
@@ -42,7 +56,25 @@ export class SignupComponent implements OnInit {
         );
     };
   }
+  checkEmail(email: string) {
+    let regex = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/;
+    return regex.test(email);
+  }
+
+  checkPassword(password: string) {
+    let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return regex.test(password);
+  }
+  checkName(name: string) {
+    let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return regex.test(name);
+  }
+  checkuserName(username: string) {
+    let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return regex.test(username);
+  }
 }
+
 // {
 //   "userArr": [
 //     { "name": "user", "password": "userCool" },
