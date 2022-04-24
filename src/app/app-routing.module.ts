@@ -7,12 +7,13 @@ import { LoginDamiComponent } from './login-dami/login-dami.component';
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
+import { AuthGuard } from './auth.guard';
 import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'toDoList', component: ToDoListComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'toDoList', component: ToDoListComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'sign-up-dami', component: SignUpDamiComponent },

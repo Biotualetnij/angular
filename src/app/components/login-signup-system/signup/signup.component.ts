@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
     };
   }
   checkEmail(email: string) {
-    let regex = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/;
+    let regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     return regex.test(email);
   }
 
