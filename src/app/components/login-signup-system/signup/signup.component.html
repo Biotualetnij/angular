@@ -1,9 +1,25 @@
-<input type="text" #userName />
-<input type="password" #password />
-<input type="email" #email />
-<input type="name" #name />
-<button
-  (click)="signUp(userName.value, password.value, email.value, name.value)"
->
-  submit
-</button>
+<div class="Main-conteiner">
+  <div class="input-Conteiner">
+    <label>Name</label>
+    <input type="name" #name />
+  </div>
+
+  <div class="input-Conteiner">
+    <label>E-mail</label>
+    <input type="email" #mail />
+  </div>
+  <div class="input-Conteiner">
+    <label>Username</label>
+    <input type="text" #userName />
+  </div>
+  <div class="input-Conteiner">
+    <label>Password</label>
+    <input type="password" #password />
+  </div>
+  <button
+    class="input-Conteiner"
+    (click)="signUp(userName.value, password.value, mail.value, name.value)"
+  >
+    submit
+  </button>
+</div>
