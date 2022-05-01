@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginDamiComponent } from './login-dami/login-dami.component';
 import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 import { DataService } from './dataService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { DataService } from './dataService';
     LoginDamiComponent,
     SignUpDamiComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
