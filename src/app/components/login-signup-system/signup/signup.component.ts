@@ -10,9 +10,14 @@ import { DataService } from 'src/app/dataService';
 })
 export class SignupComponent implements OnInit {
   public user$: {
-    userArr: { name: string; password: string; aime: string; mail: string }[];
+    userArr: {
+      name: string;
+      password: string;
+      username: string;
+      email: string;
+    }[];
   } = {
-    userArr: [{ name: '', password: '', aime: '', mail: '' }],
+    userArr: [{ name: '', password: '', username: '', email: '' }],
   };
   constructor(
     private http: HttpClient,
@@ -33,7 +38,16 @@ export class SignupComponent implements OnInit {
       email: string,
       name: string
     ) => {
-      this.http
+      if (!this.checkEmail(email)) return false;
+      console.log('email is correct');
+      if (!this.checkPassword(password)) return false;
+      console.log('password is correct');
+      if (!this.checkName(name)) return false;
+      console.log('name is correct');
+      if (!this.checkuserName(username)) return false;
+      console.log('username is correct');
+      return this.http
+
         .post<any>('http://localhost:3000/sign-up/registerUser', {
           login: username,
           password: password,
