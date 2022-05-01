@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   getCookie() {
     let auth = this.cookieService.get('login');
+
     if (auth === 'true') {
       this.isLoginIn = true;
     } else {
@@ -28,9 +29,6 @@ export class AppComponent implements OnInit {
     }, 5000);
   }
 
-  changeTitle() {
-    this.title = 'hey it is my first project';
-  }
   ngOnInit(): void {
     this.getCookie();
   }

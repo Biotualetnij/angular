@@ -12,6 +12,10 @@ import { LoginComponent } from './components/login-signup-system/login/login.com
 import { SignupComponent } from './components/login-signup-system/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './dataService';
+import { AuthGuard } from './guards/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,15 @@ import { DataService } from './dataService';
     LoginComponent,
     SignupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [DataService],
+  imports: [
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [DataService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

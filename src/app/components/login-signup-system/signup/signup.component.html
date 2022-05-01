@@ -1,3 +1,12 @@
-<input type="text" #userName />
-<input type="password" #password />
-<button (click)="signUp(userName.value, password.value)">submit</button>
+<div class="main-container">
+  <div class="input-container">
+    <label> username</label>
+    <input type="text" #userName />
+  </div>
+  <div class="input-container">
+    <label> Psssword</label>
+    <input type="password" #password />
+  </div>
+
+  <button (click)="signUp(userName.value, password.value)">submit</button>
+</div>
