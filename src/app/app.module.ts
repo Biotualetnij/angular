@@ -16,6 +16,7 @@ import { SignUpDamiComponent } from './sign-up-dami/sign-up-dami.component';
 import { DataService } from './dataService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     HttpClientModule,
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
