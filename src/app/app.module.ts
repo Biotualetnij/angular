@@ -16,6 +16,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MultyItemCaruselComponent } from './shared/multy-item-carusel/multy-item-carusel.component';
+import { NavbarBtnComponent } from './shared/navbar-btn/navbar-btn.component';
+import { DefoultBtnComponent } from './shared/defoult-btn/defoult-btn.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ToDoListComponent,
     LoginComponent,
     SignupComponent,
+    MultyItemCaruselComponent,
+    NavbarBtnComponent,
+    DefoultBtnComponent,
   ],
   imports: [
     TooltipModule.forRoot(),

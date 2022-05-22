@@ -8,12 +8,19 @@ import {
 } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { LoginComponent } from '../components/login-signup-system/login/login.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private cookieService: CookieService, private router: Router) {}
+  bsModalRef?: BsModalRef;
+  constructor(
+    private cookieService: CookieService,
+    private router: Router,
+    private modalService: BsModalService
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -29,7 +36,8 @@ export class AuthGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
+    this.bsModalRef = this.modalService.show(LoginComponent);
     return false;
   }
 }
