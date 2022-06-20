@@ -11,8 +11,14 @@ export class PositionCaruselComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    let self = this;
     this.mainIndex = this.slides.length * 100000;
+
+    setInterval(function () {
+      self.move(true);
+    }, 5000);
   }
+
   setImgClass(caruselIndex: number): string {
     console.log(caruselIndex);
     if ((caruselIndex + this.mainIndex) % this.slides.length == 0) {
@@ -26,6 +32,7 @@ export class PositionCaruselComponent implements OnInit {
     }
     return 'behind';
   }
+
   move(isRight: boolean) {
     if (isRight) {
       this.mainIndex++;
