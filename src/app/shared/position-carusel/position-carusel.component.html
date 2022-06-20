@@ -1,0 +1,13 @@
+<div class="position-carusel-container">
+  <div class="position-carusel-main-img-container">
+    <img src="http://assets.stickpng.com/images/5847ea22cef1014c0b5e4833.png" />
+  </div>
+  <div
+    class="position-carusel-planet-img {{ setImgClass(i) }}"
+    *ngFor="let item of slides; let i = index"
+  >
+    <img src="{{ item.img }}" />
+  </div>
+</div>
+<button (click)="move(true)">left</button>
+<button (click)="move(false)">right</button>

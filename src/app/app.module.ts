@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { MultyItemCaruselComponent } from './shared/multy-item-carusel/multy-item-carusel.component';
 import { NavbarBtnComponent } from './shared/navbar-btn/navbar-btn.component';
 import { DefoultBtnComponent } from './shared/defoult-btn/defoult-btn.component';
+import { PositionCaruselComponent } from './shared/position-carusel/position-carusel.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DefoultBtnComponent } from './shared/defoult-btn/defoult-btn.component'
     MultyItemCaruselComponent,
     NavbarBtnComponent,
     DefoultBtnComponent,
+    PositionCaruselComponent,
   ],
   imports: [
     TooltipModule.forRoot(),
